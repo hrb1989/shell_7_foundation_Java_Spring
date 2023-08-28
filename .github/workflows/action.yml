@@ -67,8 +67,3 @@ jobs:
 
       - name: Push Docker Image
         run: docker push rsaditya/rsaditya-java-app:0.0.1.Release
-
-
-            
-          
-      
