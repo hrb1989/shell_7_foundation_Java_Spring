@@ -1,0 +1,24 @@
+---
+startDelaySeconds: 0
+ssl: false
+lowercaseOutputName: false
+lowercaseOutputLabelNames: false
+whitelistObjectNames: ["java.lang:type=Memory", "java.lang:type=GarbageCollector,*", "org.springframework.boot:type=*,name=*"]
+blacklistObjectNames: []
+rules:
+  - pattern: 'java.lang:type=Memory'
+    name: jmx_memory_usage
+    help: "Memory usage as reported by JMX"
+    attrNameSnakeCase: true
+    type: GAUGE
+  - pattern: 'java.lang:type=GarbageCollector,name=.*'
+    name: jmx_gc_collection_seconds
+    help: "Garbage collection time"
+    attrNameSnakeCase: true
+    type: GAUGE
+  - pattern: 'org.springframework.boot:type=*,name=*'
+    name: spring_boot_jmx
+    help: "Spring Boot application JMX metrics"
+    attrNameSnakeCase: true
+    type: GAUGE
+
