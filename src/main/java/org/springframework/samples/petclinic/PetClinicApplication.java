@@ -23,7 +23,7 @@ import org.springframework.context.annotation.ImportRuntimeHints;
 /**
  * PetClinic Spring Boot Application.
  *
- * @author Dave Syer
+ * @author Puneetha
  *
  */
 @SpringBootApplication
