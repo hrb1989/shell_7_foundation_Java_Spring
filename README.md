@@ -1,4 +1,4 @@
-
+FASTER PAGE RELOAD FIXED!!!!
 
 **Shell – Final Case Study Assessment**
 
