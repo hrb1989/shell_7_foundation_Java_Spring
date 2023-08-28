@@ -27,4 +27,9 @@ class WelcomeController {
 		return "welcome";
 	}
 
+	@GetMapping("/CI-CD")
+	public String welcome() {
+		return "CI-CD setup is completed successfully";
+	}
+
 }
