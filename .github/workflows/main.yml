@@ -1,9 +1,9 @@
-  name: Azure Web App Container Deployment
+name: Azure Web App Container Deployment
 
 on:
   push:
     branches:
-      - feature  # Change this to your default branch
+      - aravinda-features  # Change this to your default branch
 
 jobs:
   build-and-deploy:
@@ -59,4 +59,4 @@ jobs:
       #   uses: azure/webapps-deploy@v2
       #   with:
       #     app-name: azure-web-app-shell-java-app
-          images: deepansha14/shell-java-app:0.0.1.Release
+          # images: deepansha14/shell-java-app:0.0.1.Release
