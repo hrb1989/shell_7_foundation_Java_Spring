@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_06d4132100da41d6a5fd431d281d5a5a }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_83174ab92bfc462cbca3c55fa972002d }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_c83e377dfb414d8a96d8c40f2a9a8609 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_84f22c39ed3e436f94f02e2b10652408 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_06d4132100da41d6a5fd431d281d5a5a }}/cyborg9303/shashikant-docker:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c83e377dfb414d8a96d8c40f2a9a8609 }}/mcr.microsoft.com/cyborg9303/shashikant-docker:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'ShashikantSolankiWebApp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_adc61560a69441e99c76579a82565b53 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_06d4132100da41d6a5fd431d281d5a5a }}/cyborg9303/shashikant-docker:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a5668897d60e49afad1da829ca3c1453 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c83e377dfb414d8a96d8c40f2a9a8609 }}/mcr.microsoft.com/cyborg9303/shashikant-docker:${{ github.sha }}'
