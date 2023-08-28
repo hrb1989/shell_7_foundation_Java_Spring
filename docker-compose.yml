@@ -1,0 +1,6 @@
+version: '3'
+services:
+  my-app:
+    image: nkmg123/github-actions-docker-java-app:0.0.1.Release
+    ports:
+      - "5000:5000"
