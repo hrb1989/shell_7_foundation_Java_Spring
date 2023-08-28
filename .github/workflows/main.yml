@@ -3,7 +3,7 @@ name: Azure Web App Container Deployment
 on:
   push:
     branches:
-      - demo # Change this to your default branch
+      - CISetupFeature # Change this to your default branch
 
 jobs:
   build-and-deploy:
