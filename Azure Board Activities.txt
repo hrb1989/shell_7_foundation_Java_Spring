@@ -1,0 +1,2 @@
+Created an Azure board for Java Spring Boot Application project.
+Added the epic, features and it's tasks.
