@@ -1,48 +1,49 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+[9:17 PM] Chopra, Vyom SBOBNG-PTIY/TAF
 
- 
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
- 
-
-name: Java CI with Maven
+name: Ready the VM after PR merge
 
  
 
 on:
-  push:
-    branches: [ "main" ]
+
   pull_request:
-    branches: [ "main" ]
+
+    types:
+
+      - closed
 
  
 
 jobs:
-  build:
 
- 
+  deploy:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
  
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn clean install -D skipTests --file pom.xml
+
+      - name: Check out code
+
+        uses: actions/checkout@v2
 
  
 
-    - name: Build Docker Image
-      run: docker build -t ayush0909/github-actions-docker-java-app .
+      - name: Deploy to VM
+
+        env:
+
+          VM_IP: "52.141.91.23"
+
+          VM_USERNAME: "part347"
+
+          VM_PASSWORD: "w@!@#$5431fsaW"
+
+        run: |
+
+          sudo apt update
+
+          sudo apt install -y openssh-client
+
+          echo "$VM_PASSWORD" | sshpass -e ssh -o StrictHostKeyChecking=no "$VM_USERNAME@$VM_IP" "sudo apt update && sudo apt install -y git maven prometheus && sudo apt install -y docker.io"
