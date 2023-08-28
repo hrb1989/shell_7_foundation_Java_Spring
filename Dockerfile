@@ -1,5 +1,5 @@
 
-FROM maven:3.6.3-jdk-20-slim AS build
+FROM maven:3.6.3-jdk-17-slim AS build
 WORKDIR usr/src/app
 
 COPY . ./
@@ -8,7 +8,7 @@ RUN mvn clean package
 
 # packing stage
 
-FROM openjdk:20-jre-slim
+FROM openjdk:17-jre-slim
 
 ARG JAR_NAME="spring-petclinic-3.1.0-SNAPSHOT.jar"
 
