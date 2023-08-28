@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_d589c08c003a4fd99222f55080725d68 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_4bda03cb143040d097af5db531c6a9e8 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_b156f9eebc204c9f823f804457ac8e96 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_a9db2bad600944e48cdfaa83c8717a08 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d589c08c003a4fd99222f55080725d68 }}/aryan-docker:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b156f9eebc204c9f823f804457ac8e96 }}/aryanblouria/aryan-docker:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'aryan-casestudy-app'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_89b6efbc7d7642e68350c6b027bd6c9e }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d589c08c003a4fd99222f55080725d68 }}/aryan-docker:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_faad8e460bbf46f392ec8fd6d3b8ebe5 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b156f9eebc204c9f823f804457ac8e96 }}/aryanblouria/aryan-docker:${{ github.sha }}'
