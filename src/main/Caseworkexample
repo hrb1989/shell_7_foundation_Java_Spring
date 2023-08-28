@@ -1,0 +1,7 @@
+Task given for case work:
+GitHub Repository and Feature Branching:
+Developers will fork the main GitHub repository (https://github.com/hrb1989/shell_7_foundation_Java_Spring) into their local environments. They will create feature branches to work on specific enhancements or tasks related to the Java Spring Boot application.
+
+Solution: Changed the colour of nav bar background and nav bar title text.
+Added the changes in feature one branch. 
+Created a pull request and successfully merged it with no conflict.
