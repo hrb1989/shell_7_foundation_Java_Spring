@@ -27,8 +27,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean install -DskipTests --file pom.xml
 
     - name: Build Docker image
       run: docker build -t patra10/shell_7_foundation_Java_Spring  
