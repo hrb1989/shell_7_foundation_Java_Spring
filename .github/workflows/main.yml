@@ -50,13 +50,13 @@ jobs:
       - name: Push Docker Image
         run: docker push aravindakashyap/shell-java-app:0.0.1.Release
 
-      # - name: Login to Azure
-      #   uses: azure/login@v1
-      #   with:
-      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
-      # - name: Deploy to Azure Web App
-      #   uses: azure/webapps-deploy@v2
-      #   with:
-      #     app-name: azure-web-app-shell-java-app
-          # images: deepansha14/shell-java-app:0.0.1.Release
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: azure-web-app-shell-java-app
+          images: aravindakashyap/shell-java-app:0.0.1.Release
