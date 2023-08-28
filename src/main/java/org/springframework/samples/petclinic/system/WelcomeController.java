@@ -24,7 +24,11 @@ class WelcomeController {
 
 	@GetMapping("/")
 	public String welcome() {
-		return "welcome";
+		return "<h1>Welcome<h1>";
+	}
+	@GetMapping("/cicd")
+	public String welcome() {
+		return "<h1>Welcome to UXEnhanced Version <h1>";
 	}
 
 }
