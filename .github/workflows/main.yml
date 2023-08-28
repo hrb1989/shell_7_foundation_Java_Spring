@@ -17,7 +17,7 @@ jobs:
         with:
            login-server: casestudyunext.azurecr.io
            username: CaseStudyUnext
-           password: 4BeI9ImuOdSEn5Zn/JRFpsAfXYF8H0OxaYyBgVjk1+ACRAUisY6
+           password: xKeLXBoMNDtAG/OoJBwkDgWRq4r7RMN5WOJaIbPTkE+ACRBykGzd
       - run: |
           docker build . -t casestudyunext.azurecr.io/sparsh:${{ github.sha }}
           docker push casestudyunext.azurecr.io/sparsh:${{ github.sha }}
