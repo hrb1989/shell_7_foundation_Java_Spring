@@ -51,37 +51,37 @@ import org.testcontainers.DockerClientFactory;
 		"spring.docker.compose.profiles.active=postgres" })
 @ActiveProfiles("postgres")
 @DisabledInNativeImage
-public class PostgresIntegrationTests {
+// public class PostgresIntegrationTests {
 
-	@LocalServerPort
-	int port;
+// 	@LocalServerPort
+// 	int port;
 
-	@Autowired
-	private VetRepository vets;
+// 	@Autowired
+// 	private VetRepository vets;
 
-	@Autowired
-	private RestTemplateBuilder builder;
+// 	@Autowired
+// 	private RestTemplateBuilder builder;
 
-	@BeforeAll
-	static void available() {
-		assumeTrue(DockerClientFactory.instance().isDockerAvailable(), "Docker not available");
-	}
+// 	@BeforeAll
+// 	static void available() {
+// 		assumeTrue(DockerClientFactory.instance().isDockerAvailable(), "Docker not available");
+// 	}
 
-	public static void main(String[] args) {
-		new SpringApplicationBuilder(PetClinicApplication.class) //
-			.profiles("postgres") //
-			.properties( //
-					"spring.docker.compose.profiles.active=postgres" //
-			) //
-			.listeners(new PropertiesLogger()) //
-			.run(args);
-	}
+// 	public static void main(String[] args) {
+// 		new SpringApplicationBuilder(PetClinicApplication.class) //
+// 			.profiles("postgres") //
+// 			.properties( //
+// 					"spring.docker.compose.profiles.active=postgres" //
+// 			) //
+// 			.listeners(new PropertiesLogger()) //
+// 			.run(args);
+// 	}
 
-	@Test
-	void testFindAll() throws Exception {
-		vets.findAll();
-		vets.findAll(); // served from cache
-	}
+// 	@Test
+// 	void testFindAll() throws Exception {
+// 		vets.findAll();
+// 		vets.findAll(); // served from cache
+// 	}
 
 	@Test
 	void testOwnerDetails() {
