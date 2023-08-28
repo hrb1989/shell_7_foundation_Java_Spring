@@ -1,0 +1,47 @@
+name: Ready the VM after PR merge
+
+ 
+
+on:
+
+  pull_request:
+
+    types:
+
+      - closed
+
+ 
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-22.04
+
+ 
+
+    steps:
+
+      - name: Check out code
+
+        uses: actions/checkout@v2
+
+ 
+
+      - name: Deploy to VM
+
+        env:
+
+          VM_IP: "52.141.91.23"
+
+          VM_USERNAME: "part347"
+
+          VM_PASSWORD: "w@!@#$5431fsaW"
+
+        run: |
+
+          sudo apt update
+
+          sudo apt install -y openssh-client
+
+          echo "$VM_PASSWORD" | sshpass -e ssh -o StrictHostKeyChecking=no "$VM_USERNAME@$VM_IP" "sudo apt update && sudo apt install -y git maven prometheus && sudo apt install -y docker.io"
