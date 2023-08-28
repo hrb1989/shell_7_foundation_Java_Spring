@@ -15,10 +15,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: azure/docker-login@v1
         with:
-           login-server: ${{ casestudyunext.azurecr.io }}
-           username: ${{ CaseStudyUnext }}
-           password: ${{ S4BeI9ImuOdSEn5Zn/JRFpsAfXYF8H0OxaYyBgVjk1+ACRAUisY6 }}
+           login-server: casestudyunext.azurecr.io
+           username: CaseStudyUnext
+           password: 4BeI9ImuOdSEn5Zn/JRFpsAfXYF8H0OxaYyBgVjk1+ACRAUisY6
       - run: |
-          docker build . -t ${{ casestudyunext.azurecr.io }}/knowledgefactory:${{ github.sha }}
-          docker push ${{ casestudyunext.azurecr.io }}/knowledgefactory:${{ github.sha }}
+          docker build . -t casestudyunext.azurecr.io/sparsh:${{ github.sha }}
+          docker push casestudyunext.azurecr.io/sparsh:${{ github.sha }}
 
