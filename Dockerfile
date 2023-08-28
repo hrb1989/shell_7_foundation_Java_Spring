@@ -1,5 +1,5 @@
 
-FROM maven:3.6.3-jdk-11-slim AS build
+FROM maven:3-eclipse-temurin-20-alpine AS build
 WORKDIR usr/src/app
 
 COPY . ./
@@ -8,7 +8,7 @@ RUN mvn clean package
 
 # packing stage
 
-FROM openjdk:11-jre-slim
+FROM openjdk:21-oracle
 
 ARG JAR_NAME="spring-petclinic-3.1.0-SNAPSHOT.jar"
 
