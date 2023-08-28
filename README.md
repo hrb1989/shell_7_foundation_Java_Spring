@@ -67,7 +67,7 @@ Once the CI/CD workflow is successfully implemented, Streamline Solutions Inc. w
 
 ## Outcome:
 
-By systematically implementing the CI/CD workflow, Streamline Solutions Inc. aims to achieve rapid and reliable software deployments. The company's Java Spring Boot application will reach customers seamlessly, ensuring a high-quality user experience and setting the stage for future innovation.
+The CI/CD workflow is systematically implemented by Streamline Solutions Inc., with the aim of achieving rapid and reliable software deployments. Seamless delivery to customers is ensured for the company's Java Spring Boot application, guaranteeing a high-quality user experience and setting the stage for future innovation.
 
 # **Rubrics:**
 You will be evaluated on the following criterias:
