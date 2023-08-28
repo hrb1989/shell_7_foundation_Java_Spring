@@ -10,7 +10,7 @@ RUN mvn clean package
 
 FROM openjdk:21-oracle
 
-ARG JAR_NAME="spring-petclinic-3.1.0-SNAPSHOT.jar"
+ARG JAR_NAME="spring-petclinic-3.1.0-SNAPSHOT"
 
 WORKDIR /usr/src/app
 
