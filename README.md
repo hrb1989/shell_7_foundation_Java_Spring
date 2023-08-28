@@ -3,7 +3,7 @@
 **Shell – Final Case Study Assessment**
 
 # **Scenario:** 
-Streamline Solutions Inc. - Optimizing Software Deployment
+Streamline Solutions Inc. = Optimizing Software Deployment
 
 # **Problem Statement:** 
 Implementing a Seamless CI/CD Workflow for a Spring Boot Application using Azure Boards, Azure, Git, Maven, Docker, Github, Github Actions
